@@ -1,0 +1,9 @@
+services:
+  auth:
+    image: quay.io/keycloak/keycloak:22.0.5
+    ports:
+      - "${KEYCLOAK_PORT}:8080"
+    env_file:
+      - .env
+    command: 
+      - start-dev
