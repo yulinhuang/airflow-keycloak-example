@@ -1,9 +1,12 @@
 services:
-  auth:
+  keycloak:
     image: quay.io/keycloak/keycloak:22.0.5
+    container_name: keycloak
     ports:
       - "${KEYCLOAK_PORT}:8080"
     env_file:
       - .env
+    volumes:
+      - ./src/keycloak:/opt/keycloak/data/import
     command: 
-      - start-dev
+      - start-dev --import-realm
