@@ -1,3 +1,4 @@
+version: '3.8'
 services:
   keycloak:
     image: quay.io/keycloak/keycloak:22.0.5
@@ -8,5 +9,9 @@ services:
       - .env
     volumes:
       - ./src/keycloak:/opt/keycloak/data/import
+      - keycloak_data:/opt/keycloak/
     command: 
       - start-dev --import-realm
+
+volumes:
+  keycloak_data:
