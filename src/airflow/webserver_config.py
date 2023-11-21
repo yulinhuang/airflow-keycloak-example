@@ -67,7 +67,7 @@ AUTH_ROLES_MAPPING = {
   "airflow_public": ["Public"],
 }
 PROVIDER_NAME = 'keycloak'
-CLIENT_ID = os.environ.get('CLIENT_ID', 'airflow')
+CLIENT_ID = 'airflow'
 CLIENT_SECRET = os.environ.get('KEYCLOAK_CLIENT_SECRET_AIRFLOW', '')
 KEYCLOAK_URL = os.environ.get('_KEYCLOAK_URL', 'http://host.docker.internal:8181')
 OIDC_ISSUER = f'{KEYCLOAK_URL}/realms/datascience'
