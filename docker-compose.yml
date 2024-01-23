@@ -324,12 +324,9 @@ services:
       - "9000:9000"
       - "9099:9099"
     environment:
-      MINIO_ROOT_USER: idoml-minio
-      MINIO_ROOT_PASSWORD: idoml-minio-password
       MINIO_IDENTITY_OPENID_CONFIG_URL: http://host.docker.internal:${KEYCLOAK_PORT}/realms/datascience/.well-known/openid-configuration
       MINIO_IDENTITY_OPENID_CLIENT_ID: minio
       MINIO_IDENTITY_OPENID_CLIENT_SECRET: ${KEYCLOAK_CLIENT_SECRET_MINIO}
-      # MINIO_IDENTITY_OPENID_DISPLAY_NAME: datascience
       MINIO_IDENTITY_OPENID_SCOPES: minio
       MINIO_IDENTITY_OPENID_REDIRECT_URI_DYNAMIC: "on"
     env_file:
